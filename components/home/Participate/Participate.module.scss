@@ -1,0 +1,53 @@
+@import '../../../styles//variables.scss';
+.Participate{
+    margin-bottom: $mBottom;
+    &_title{
+        margin-bottom: 100px !important;
+    }
+    &_block{
+        display: flex;
+        justify-content: space-between;
+    }
+    &_item{
+        width: 100%;
+        max-width: 500px;
+            &_title{
+                font-family: 'Open Sans', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 28px;
+                color: #000000;
+                margin-bottom: 40px ;
+                   
+            }
+            ul{
+                li{
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 22px;
+                    line-height: 150.2%;
+                    color: #565656;
+                    list-style: none;
+                    margin-bottom: 20px;
+                    position: relative;
+                        &::before{
+                            content: '';
+                            display: block;
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+                            background-color: #271A59;
+                            margin-right: 20px;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: -40px;
+                        }
+                        a{
+                            color: #6E58F0;
+                        }
+                }
+            }
+    }
+}

@@ -1,0 +1,12 @@
+@import '../../../styles/variables.scss';
+.organizers{
+    margin-bottom: $mBottom;
+    &_title{
+        margin-bottom: 60px !important;
+    }
+    &_block{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}

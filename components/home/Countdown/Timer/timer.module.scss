@@ -1,0 +1,45 @@
+.countdown{
+    &_timer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 400px;
+        &_item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        &_number{
+            font-family: Rubik;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 34px;
+            line-height: 40px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #424242;
+            width: 60px;
+            display: flex;
+            justify-content: center;
+        }
+        &_text{
+            font-family: 'Open Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            text-align: center;
+            color: #424242;
+        }
+        &_dots{
+            font-family: 'Open Sans', sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 11px;
+            line-height: 15px;
+            text-align: center;
+            color: #424242;
+        }
+    }
+}

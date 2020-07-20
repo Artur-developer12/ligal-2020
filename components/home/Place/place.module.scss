@@ -1,0 +1,46 @@
+@import '../../../styles/variables.scss';
+.place{
+    margin-bottom: $mBottom;
+    &_inner{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_info{
+        width: 100%;
+        max-width: 440px;
+    }
+    &_img{
+        width: 540px;
+        border-radius: 10px;
+        overflow: hidden;
+        line-height: 0;
+    }
+    &_subtitle{
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        letter-spacing: 0.05em;    
+        color: #042AAE;
+        margin-bottom: 10px;
+    }
+    &_title{
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 38px;
+        line-height: 45px;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 24px;
+    }
+    &_text{
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 168.2%;
+        color: #4E4E4E;
+    }
+}

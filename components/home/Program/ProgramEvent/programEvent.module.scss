@@ -1,0 +1,42 @@
+.program{
+    &_event{
+        &_leading{
+            width: 21.6%;
+            display: flex;
+            align-items: center;
+        }
+        &_item{
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(202, 202, 202, 0.4);
+
+        }
+        &_name{
+            font-family: 'Open Sans', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            color: #000000;
+            width: 35%;
+            padding-right: 25px;
+
+        }
+        &_place{
+            width: 21.6%;
+
+        }
+        &_time{
+            width: 21.6%;
+        }
+        &_place, &_time{
+            font-family: 'Open Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            color: #000000;
+        }
+        
+        
+    }
+}

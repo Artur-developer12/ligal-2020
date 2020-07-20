@@ -1,0 +1,7 @@
+@import '../../../styles/variables.scss';
+.faq{
+    margin-bottom: $mBottom;
+    &_title{
+        margin-bottom: 110px !important;
+    }
+}

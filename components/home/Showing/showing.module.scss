@@ -1,0 +1,33 @@
+@import './../../../styles/variables.scss';
+.showing{
+    margin-bottom: $mBottom;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $darkBlue;
+     
+    &_item{
+        margin-right: 100px;
+            &:last-child{
+                margin-right: 0;
+            }
+    }
+    &_number{
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 45px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    &_text{
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 15px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+}

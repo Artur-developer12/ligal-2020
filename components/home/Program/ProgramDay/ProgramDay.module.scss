@@ -1,0 +1,22 @@
+.program{
+    &_day{
+        &_btn{
+            font-family: 'Open Sans', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 5px;
+            color: rgba(0, 0, 0, 0.49);
+            padding: 10px 20px;
+            cursor: pointer;
+                &.active{
+                    background: linear-gradient(0deg, #4B528E, #4B528E);
+                    color: #fff;
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                }
+
+        }
+    }
+}

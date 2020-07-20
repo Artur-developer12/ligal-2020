@@ -1,0 +1,67 @@
+.header{
+    &_inner{
+        z-index: 1000;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 15px 0;
+            &.fixed{
+                position: fixed;
+                top: 0;
+                background-color: #212440;
+                animation: navFixed 0.5s;
+                padding: 10px 0;
+                box-shadow: 0px 1px 30px -5px;
+
+            }
+        
+        &_navigate{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+    }
+    &_logo{
+        display: flex;
+        align-items: center;
+            &_img{
+                margin-right: 15px;
+            }
+            &_text{
+                color: #fff;
+                font-family: 'Open Sans', sans-serif;
+
+            }
+    }
+    &_nav{
+        &_link{
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #fff;
+            line-height: 16px;
+            transition: color 0.2s;
+            margin-right: 20px;
+            text-decoration: none;
+            cursor: pointer;
+                &:hover{
+                    color:  #7E57D2;
+                }
+                &:last-child{
+                    margin-right: 30px;
+                    
+                }
+        }
+    }
+}
+
+@keyframes navFixed {
+    from {
+      top: -99px;
+    }
+  
+    to {
+      top: 0;
+    }
+  }
