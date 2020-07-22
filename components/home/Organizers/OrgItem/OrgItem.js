@@ -8,7 +8,7 @@ const OrgItem = ({OrgItem}) => {
 
     let bg  =   OrgItem.photo === null ? {backgroundImage: `url(noPhoto.jpg)`}: {backgroundImage: `url(${API_URL + OrgItem.photo.url})`} 
     return (
-        <div>
+        <React.Fragment>
             <div className={css.organizers_item} style={bg}>
                 <div className={css.organizers_item_info}>
                     <div className={css.organizers_item_info_social}>
@@ -21,7 +21,7 @@ const OrgItem = ({OrgItem}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     );
 }
 

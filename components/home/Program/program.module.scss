@@ -9,16 +9,24 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 100px;
+        @media (max-width: 908px) {
+            margin-bottom: 40px;
+        }
+
         &_title{
             font-family: 'Open Sans', sans-serif;
             font-style: normal;
             font-weight: 600;
             font-size: 26px;
             color: #000000;
+            @media (max-width: 908px) {
+                display: none;
+            }
         }
         
         &_group{
             display: flex;
+            flex-wrap: wrap;
         }
     }
     &_event{
@@ -27,6 +35,9 @@
             width: 100%;
             padding-bottom: 20px;
             border-bottom: 1px solid rgba(202, 202, 202, 0.4);
+            @media (max-width: 908px){
+                display: none;
+            }
                
                 div{
                     font-family: 'Open Sans', sans-serif;
@@ -53,4 +64,5 @@
                 }
         }
     }
+    
 }

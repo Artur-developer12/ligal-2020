@@ -57,6 +57,12 @@
                 letter-spacing: -0.02em;
                 color: rgba(255, 255, 255, 0.8);
                 margin-bottom: 18px;
+                    @media  (max-width: 500px) {
+                        font-size: 20px;
+                    }
+                    @media  (max-width: 374px) {
+                        font-size: 18px;
+                    }
             }
             &_title{
                 font-family: Rubik;
@@ -69,6 +75,12 @@
                 text-transform: uppercase;
                 color: #FFFFFF;
                 margin-bottom: 40px;
+                    @media  (max-width: 500px) {
+                        font-size: 26px;
+                    }
+                    @media  (max-width: 374px) {
+                        font-size: 22px;
+                    }
             }
         }
         &_arrow{

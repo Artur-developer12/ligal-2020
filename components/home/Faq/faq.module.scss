@@ -3,5 +3,8 @@
     margin-bottom: $mBottom;
     &_title{
         margin-bottom: 110px !important;
+            @media (max-width:620px) {
+                margin-bottom: 50px !important;
+            }
     }
 }

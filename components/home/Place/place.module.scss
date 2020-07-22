@@ -5,13 +5,21 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+            @media (max-width: 1050px) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
     }
     &_info{
         width: 100%;
         max-width: 440px;
+            @media (max-width: 1050px) {
+                margin-bottom: 20px;
+            }
     }
     &_img{
-        width: 540px;
+        width: 100%;
+        max-width: 540px;
         border-radius: 10px;
         overflow: hidden;
         line-height: 0;
@@ -24,6 +32,9 @@
         letter-spacing: 0.05em;    
         color: #042AAE;
         margin-bottom: 10px;
+        @media (max-width: 640px) {
+            font-size: 15px;
+        }
     }
     &_title{
         font-family: Rubik;
@@ -34,6 +45,9 @@
         text-transform: uppercase;
         color: #000000;
         margin-bottom: 24px;
+        @media (max-width: 640px) {
+            font-size: 28px;
+        }
     }
     &_text{
         font-family: Montserrat;
@@ -42,5 +56,8 @@
         font-size: 14px;
         line-height: 168.2%;
         color: #4E4E4E;
+        @media (max-width: 640px) {
+            font-size: 13px;
+        }
     }
 }

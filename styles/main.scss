@@ -76,6 +76,9 @@ button, button:visited, button:focus, button:active, button:hover{
   color: #000000;
   text-align: center;
   margin-bottom: 15px;
+    @media (max-width: 470px) {
+      font-size: 32px;
+    }
 }
 
 .subtitle{
@@ -87,8 +90,10 @@ button, button:visited, button:focus, button:active, button:hover{
   text-align: center;
   color: #565656;
   text-align: center;
-  width: 516px;
+  max-width: 516px;
   margin: 0 auto;
+  padding: 0 10px;
+    
 }
 img{
   width: 100%;
@@ -96,7 +101,7 @@ img{
 }
 
  
-
+// animate
 .animate-enter {
   height: 0 !important;
 }

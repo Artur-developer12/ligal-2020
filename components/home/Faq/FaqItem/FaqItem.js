@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import css from './faqItem.module.scss'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { CSSTransition} from 'react-transition-group'
 
 
 const FaqItem = ({faqItem}) => {

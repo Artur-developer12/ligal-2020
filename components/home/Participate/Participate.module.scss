@@ -7,10 +7,19 @@
     &_block{
         display: flex;
         justify-content: space-between;
+        @media (max-width: 1162px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
     &_item{
         width: 100%;
         max-width: 500px;
+        @media (max-width: 1162px) {
+           margin: 0 55px;
+           margin-bottom: 80px;
+
+        }
             &_title{
                 font-family: 'Open Sans', sans-serif;
                 font-style: normal;
@@ -18,6 +27,10 @@
                 font-size: 28px;
                 color: #000000;
                 margin-bottom: 40px ;
+                @media (max-width: 1162px) {
+                    margin-bottom:30px;
+          
+                  }
                    
             }
             ul{
@@ -31,6 +44,11 @@
                     list-style: none;
                     margin-bottom: 20px;
                     position: relative;
+                    @media (max-width: 1162px) {
+                       font-size: 18px;
+                       margin-bottom:10px;
+             
+                     }
                         &::before{
                             content: '';
                             display: block;
@@ -38,7 +56,6 @@
                             height: 16px;
                             border-radius: 50%;
                             background-color: #271A59;
-                            margin-right: 20px;
                             position: absolute;
                             top: 50%;
                             transform: translateY(-50%);

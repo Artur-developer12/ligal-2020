@@ -5,12 +5,25 @@
 
     &_block{
         display: flex;
+        justify-content: space-between;
         padding-bottom: 30px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.28);;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+        flex-wrap: wrap;
+            @media (max-width:960px) {
+                margin-bottom: 30px;
+                // flex-direction: column;
+                // margin-left: 50px;
+            }
 
     }
     &_info{
-        margin-right: 200px;
+        margin-bottom: 30px;
+        padding-right: 20px;
+
+        @media (max-width:960px) {
+            // margin-bottom: 30px;
+             
+        }
         &_logo{
             display: flex;
             align-items: center;
@@ -26,7 +39,9 @@
                 font-size: 22px;
                 color: #FFFFFF;
             }
+            
         }
+        
         &_text{
             font-family: Montserrat;
             font-style: normal;
@@ -35,7 +50,6 @@
             line-height: 15px;
             letter-spacing: 0.04em;
             color: #FFFFFF;
-            margin-bottom: 10px;
         }
         &_link{
             font-family: Montserrat;
@@ -48,9 +62,16 @@
         }
     }
     &_contacts{
-        margin-right: 100px;
+        margin-bottom: 30px;
+
+        @media (max-width:960px) {
+            // margin-bottom: 30px;
+             
+        }
         &:last-child{
-            margin-right: 0;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 0;
         }
         &_title{
             font-family: Rubik;
@@ -98,7 +119,7 @@
 
         }
         &_social{
-           
+           display: flex;
                a{
                    transition: color 0.2s;
                    color: #fff;
