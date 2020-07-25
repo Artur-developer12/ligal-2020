@@ -11,14 +11,14 @@ const Nav = () => {
 
     const menu = () =>  setActive(!active)   
     
-    console.log(active)
-
     useEffect(()=>{
         active === true ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto' 
         let headerHeight = document.querySelector('#main').scrollHeight
         window.onscroll = () =>  headerHeight <= pageYOffset === true ? setFixed(style.fixed):  setFixed('')
+
+        // ссылки
         let btn = document.querySelectorAll(`.${style.header_nav_link}`)
-        btn.forEach(item => item.onclick = () =>  setActive(!active))
+        btn.forEach(item => item.onclick = () =>  setActive(false))
     })
 
 
