@@ -5,11 +5,16 @@
     margin-top: 20px;
     max-width: 600px;
     width: 100%;
+    margin: 0 20px;
+    padding: 20px 0;
 }
 
 .formItem{
     display: flex;
-    // justify-content: space-between;
+    @media (max-width:617px){
+        flex-wrap: wrap;
+
+    }
        
 }
 
@@ -17,6 +22,10 @@
     width: 100%;
     &:first-child{
         margin-right: 30px !important;
+        @media (max-width:617px){
+            margin-right: 0 !important;
+    
+        }
     }
 
 }
@@ -24,7 +33,7 @@
 .passportData{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 .passportTitle{
     font-size: 20px;

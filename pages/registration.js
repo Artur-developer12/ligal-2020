@@ -2,14 +2,11 @@ import React from 'react';
 import RegInner from '../components/reg/RegInner'
 import Head from 'next/head'
 
+import css from './registration.module.scss';
+
 
 const reg = () => {
-    const style = {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%'
-    }
+     
  
     return (
         <React.Fragment>
@@ -17,7 +14,8 @@ const reg = () => {
                 <title>Регистрация</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div style={style}>
+            <div className={css.container}>
+                <h1 className={css.title}>Регистрация на форум</h1>
                 <RegInner/>
             </div>
         </React.Fragment>
