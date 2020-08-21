@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import style from './nav.module.scss'
+import Links from 'next/link'
 import {Link} from "react-scroll";
 import NavBtn from './NavBtn/NavBtn'
 
@@ -66,7 +67,9 @@ const Nav = () => {
                             >
                                 Программа
                             </Link>
-                            <a className={`btn ${style.header_nav_btn}`} href="!#">Принять участие</a>
+                            <Links href={'/registration'}>
+                                <a className={`btn ${style.header_nav_btn}`}>Принять участие</a>
+                            </Links>
                         </div>
                     </nav>
                     <NavBtn menu={menu} active={active}/>

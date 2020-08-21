@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 import css  from './countdown.module.scss'
 import Timer from './Timer/Timer'
 
@@ -13,7 +14,9 @@ const Countdown = ({countdown}) => {
                             <Timer dateTimer={countdown.date}/>
                         </div>
                         <div className={css.countdown_block_link}>
-                            <a className="btn" href={countdown.link}>Зарегистрироваться</a>
+                            <Link href={'/registration'}>
+                                <a className="btn">Зарегистрироваться</a>
+                            </Link>
                         </div>
                     </div>    
                 </div>

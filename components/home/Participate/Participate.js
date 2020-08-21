@@ -19,8 +19,7 @@ const Participate = () => {
                         <div className={css.Participate_item}>
                             <div className={css.Participate_item_title}>Как принять участие в форуме</div>
                             <ul>
-                                <li>зарегистрироваться на <a href="!#"> АИС молодежь Россий</a></li>
-                                <li>Подать заявку на сайте  <a href="!#">АИС</a></li>
+                                <li>Пройти регистрацию на нашем сайте</li>
                                 <li>Дождаться оценки экспертов</li>
                                 <li>Прийти на место сбора</li>
                             </ul>

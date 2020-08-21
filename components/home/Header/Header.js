@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './header.module.scss'
+import Links from 'next/link'
 import {Link} from "react-scroll";
 
 const header = ({headData}) => {
@@ -11,7 +12,9 @@ const header = ({headData}) => {
                  <div className={style.header_intro}>
                     <div className={style.header_intro_date}><i className="far fa-calendar-alt"></i> 1-5 декабря</div>
                     <div className={style.header_intro_title}>Межрегиональный юридический форум <br/> «ЛИГАЛ – 2020»</div>
-                    <div className="btn">Регистрация</div>
+                    <Links href={'/registration'}>
+                        <a className="btn">Регистрация</a>
+                    </Links>
                 </div>
                 <Link
                     className={style.header_arrow}
