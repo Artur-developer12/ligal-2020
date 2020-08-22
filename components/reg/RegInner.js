@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { Formik, Form, Field } from 'formik';
-import { Button, LinearProgress, MenuItem } from '@material-ui/core';
-import { TextField } from 'formik-material-ui';
+import { Button, LinearProgress, MenuItem, FormControlLabel } from '@material-ui/core';
+import { TextField, CheckboxWithLabel, Checkbox } from 'formik-material-ui';
 
 import css from './reg.module.scss';
 
  
 
 function reg() {
+    const {API_URL} = process.env
 
 
     const education = [
@@ -59,12 +60,27 @@ function reg() {
             label: 'Ставропольский край',   
           },
           {
-            value: 'Ставропольский край',
+            value: 'Чеченская Республика',
             label: 'Чеченская Республика',   
           },
       ]
 
-
+    
+      const onRegistr = async (url,data)=>{
+        try {
+            const response = await fetch(url, {
+              method: 'POST', // или 'PUT'
+              body: JSON.stringify(data, null, 2), // данные могут быть 'строкой' или {объектом}!
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            });
+            const json = await response.json();
+            console.log('Успех:',json)
+          } catch (error) {
+            console.error('Ошибка:', error);
+          }
+      }
 
   return (
     <Formik
@@ -81,6 +97,7 @@ function reg() {
         passportNumber:'',
         passportDate:'',
         passportCode:'',
+        personalData: false
       }}
       validate={values => {
         const errors= {};
@@ -98,7 +115,7 @@ function reg() {
             errors.surname = 'Введите фамилию'
         }
         if(!values.patronymic){
-            errors.patronymic = 'Введите Отчество'
+            errors.patronymic = 'Введите отчество'
         }
         if(!values.age){
             errors.age = 'Введите возраст'
@@ -110,7 +127,7 @@ function reg() {
             errors.region = 'Выберите регион'
         }
         if(!values.number){
-            errors.number = 'Выберите номер'
+            errors.number = 'Введите номер'
         }
         if(!values.passportSeries){
             errors.passportSeries = 'Введите серию паспорта'
@@ -124,12 +141,16 @@ function reg() {
         if(!values.passportCode){
             errors.passportCode = 'Введите код подразделения'
         }
+        if(values.personalData === false){
+          errors.personalData = 'Нужно ваше согласие'
+        }
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           setSubmitting(false);
-          alert(JSON.stringify(values, null, 2));
+        //   alert(JSON.stringify(values, null, 2));
+            onRegistr(`${API_URL}/registereds`, values)
         }, 500);
       }}
     >
@@ -256,7 +277,15 @@ function reg() {
                     className={css.input}
                 />
               </div>
-          </div>   
+          </div>
+          <div className={css.personalData}>
+            <Field
+              component={CheckboxWithLabel}
+              name="personalData"
+              type="checkbox"
+              Label={{ label: 'Согласен на обработку моих персональных данных' }}
+            />
+          </div>    
 
           
           {isSubmitting && <LinearProgress />}

@@ -13,6 +13,8 @@
     display: flex;
     @media (max-width:617px){
         flex-wrap: wrap;
+        margin-bottom: 10px;
+
 
     }
        
@@ -30,6 +32,10 @@
 
 }
 
+.personalData{
+    margin-top: 30px
+}
+
 .passportData{
     display: flex;
     flex-direction: column;
@@ -38,6 +44,7 @@
 .passportTitle{
     font-size: 20px;
     text-align: start;
+    margin-bottom: 20px;
 
 }
 .btn{
