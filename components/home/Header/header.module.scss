@@ -1,9 +1,10 @@
 @import '../../../styles/variables.scss';
 
 .header{
-    background-image: url('../../../public/header-bg.png');
+    background-image: url('../../../public/header-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center top;
     height: 100vh;
     width: 100%;
     margin-bottom: $mBottom;
@@ -17,7 +18,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
             z-index: 2;
         }
 
@@ -87,7 +88,6 @@
             position: absolute;
             bottom: 30px;
             left: 50%;
-            transform: translateX(-50%);
             background-color: rgba(53, 53, 53, 0.7);
             width: 35px;
             height: 35px;
@@ -117,9 +117,9 @@
 
 @keyframes move {
     0%{
-        transform: translateY(0);
+        transform: translateY(0) translateX(-50%);
     }
     100%{
-        transform: translateY(10px);
+        transform: translateY(10px) translateX(-50%);
     }
 }
