@@ -81,10 +81,7 @@ function reg() {
             console.error('Ошибка:', error);
           }
       }
-
-  return (
-    <Formik
-      initialValues={{
+      const initialValues = {
         name: '',
         surname: '',
         patronymic:'',
@@ -98,8 +95,9 @@ function reg() {
         passportDate:'',
         passportCode:'',
         personalData: false
-      }}
-      validate={values => {
+      }
+
+      const validate = values => {
         const errors= {};
         if (!values.email) {
           errors.email = 'Введите email';
@@ -145,14 +143,22 @@ function reg() {
           errors.personalData = 'Нужно ваше согласие'
         }
         return errors;
-      }}
-      onSubmit={(values, { setSubmitting }) => {
+      }
+
+
+      const onSubmit = (values, { setSubmitting }) => {
         setTimeout(() => {
           setSubmitting(false);
         //   alert(JSON.stringify(values, null, 2));
             onRegistr(`${API_URL}/registereds`, values)
         }, 500);
-      }}
+      }
+
+  return (
+    <Formik
+      initialValues={initialValues}
+      validate={validate}
+      onSubmit={onSubmit}
     >
       {({ submitForm, isSubmitting }) => (
         <Form className={css.form}>
