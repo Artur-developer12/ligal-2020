@@ -13,15 +13,38 @@ const Nav = () => {
     const menu = () =>  setActive(!active)   
     
     useEffect(()=>{
+        // отмена скролла 
         active === true ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto' 
+        // при клике на ссылок свораивать меню 
+        let btn = document.querySelectorAll(`.${style.header_nav_link}`)
+        btn.forEach(item => item.onclick = () =>  setActive(false))
+
+
+
+        // фиксированное меню
         let headerHeight = document.querySelector('#main').scrollHeight
         window.onscroll = () =>  headerHeight <= pageYOffset === true ? setFixed(style.fixed):  setFixed('')
 
-        // ссылки
-        let btn = document.querySelectorAll(`.${style.header_nav_link}`)
-        btn.forEach(item => item.onclick = () =>  setActive(false))
     })
 
+    const links = [
+        {
+            text: 'главная',
+            to: 'main'
+        },
+        {
+            text: 'О форуме',
+            to: 'about'
+        },
+        {
+            text: 'Организаторы',
+            to: 'oranizanires'
+        },
+        {
+            text: 'Программа',
+            to: 'program'
+        },
+    ]
 
     return (
         <div className={`${style.header_inner} ${fixed}`}>
@@ -31,47 +54,33 @@ const Nav = () => {
                         <img className={style.header_logo_img} src="logo.svg" alt="лого"/>
                         <div className={style.header_logo_text}>Лигал-2020</div>
                     </div>
-
-                    <nav className={`${style.header_nav} ${active==true ? style.active: ''}`}>
+                    
+                    {/* объект анимаций */}
+                    <nav className={` ${style.header_nav} ${active==true ? style.active: ''} `}>
                         <div className={style.header_nav_block}>
-                            <Link 
-                                className={style.header_nav_link} 
-                                to="main" 
-                                smooth={true} 
-                                duration={1000}
-                            >
-                                Главная
-                            </Link>
-                            <Link 
-                                className={style.header_nav_link} 
-                                to="about"
-                                smooth={true} 
-                                duration={1000}
-
-                            >
-                                О форуме
-                            </Link>
-                            <Link 
-                                className={style.header_nav_link} 
-                                to="oranizanires" 
-                                smooth={true} 
-                                duration={1000}
-                            >
-                                Организаторы
-                            </Link>
-                            <Link 
-                                className={style.header_nav_link} 
-                                to="program" 
-                                smooth={true} 
-                                duration={1000}
-                            >
-                                Программа
-                            </Link>
+                            {
+                                links.map((item,index) => {
+                                    return(
+                                        <Link 
+                                            className={style.header_nav_link} 
+                                            to={item.to} 
+                                            smooth={true} 
+                                            duration={1000}
+                                            key={index}
+                                        >
+                                            {item.text}
+                                        </Link>
+                                    )
+                                })
+                            }
+                            
                             <Links href={'/registration'}>
                                 <a className={`btn ${style.header_nav_btn}`}>Принять участие</a>
                             </Links>
                         </div>
                     </nav>
+                    {/* ///// объект анимаций */}
+
                     <NavBtn menu={menu} active={active}/>
                 </div>
             </div>

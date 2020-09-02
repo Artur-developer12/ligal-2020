@@ -13,10 +13,12 @@ import Program from '../components/home/Program/Program'
 import Faq from '../components/home/Faq/Faq'
 import Countdown from '../components/home/Countdown/Countdown'
 import Footer from '../components/home/Footer/Footer'
-
+ 
 
  function Home({organizers, faq, programm, place, countdown, header}) {
 
+
+  
   return (
     <React.Fragment>
       <Head>

@@ -1,35 +1,49 @@
 import {useState} from 'react';
 import css from './faqItem.module.scss'
-import { CSSTransition} from 'react-transition-group'
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const FaqItem = ({faqItem}) => {
-    const [veiwAnswer, setVeiwAnswer] = useState(false)
-     
+    const [isOpen, setIsOpen] = useState(false)
+    const variants = {
+        open: { rotate: 0 },
+        closed: { rotate: 135 },
+      }
+
+      const answer = {
+        open: { 
+            height: 0,
+            opacity: 0
+        },
+        closed: { 
+            height: 'auto',
+            opacity: 1,
+
+         },
+      }
     
     return (
-        <div onClick={()=>setVeiwAnswer(!veiwAnswer)} className={css.faq_item}>
+        <div onClick={()=>setIsOpen(!isOpen)} className={css.faq_item}>
             <div className={css.faq_item_questions}>
                 <div className={css.faq_item_questions_text}>{faqItem.question}</div>
-                <CSSTransition
-                     in={veiwAnswer}
-                     classNames='faqBtn'   
-                     timeout={600} 
-                >
-                    <div className={css.faq_item_questions_btn}></div>
-                </CSSTransition>
+               
+                    <motion.div
+                        animate={isOpen ? "closed" : "open"}
+                        variants={variants}
+                        transition={{duration: 0.4, type:"spring", stiffness: 140}}
+                    >
+                        <FontAwesomeIcon className={css.faq_item_questions_btn} icon={['fas', 'plus']}/>
+                    </motion.div>
             </div>
-                <CSSTransition
-                    in={veiwAnswer}
-                    appear={true}
-                    classNames='animate'   
-                    timeout={600} 
-                    unmountOnExit={true}
+                <motion.div 
+                    className={css.faq_item_answer}
+                    animate={isOpen ? "closed" : "open"}
+                    variants={answer}
+                    transition={{duration: 0.4, type:"spring", stiffness: 140}}
                 >
-                    <div className={css.faq_item_answer}>{faqItem.answer}</div>
-                </CSSTransition>
-
-
+                    {faqItem.answer}
+                </motion.div>
         </div>
     );
 }

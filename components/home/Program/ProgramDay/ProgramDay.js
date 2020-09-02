@@ -1,16 +1,38 @@
 import React from 'react';
 import css from './ProgramDay.module.scss'
+import { motion } from "framer-motion";
 
 const ProgramDay = ({item, selectDay, chooseDay}) => {
-    let  active
+    const selectBtn = {
+        closed: { 
+            backgroundColor: '#fff',
+            color: 'rgba(0, 0, 0, 0.49)',
+            scale: 1
+
+         },
+        open: { 
+            backgroundColor: '#4B528E',
+            color: 'rgba(255, 255, 255, 1)',
+            scale: 1.1
+
+        },
+        
+      }
 
 
-
-    chooseDay && chooseDay.id===item.id ? active = css.active : null
+    const activeBtn = chooseDay.id===item.id ? true : false
     
     return (
         <React.Fragment>
-            <div onClick={()=>selectDay(item)} className={`${css.program_day_btn} ${active}`}>{item.day}</div>
+            <motion.div 
+                onClick={()=>selectDay(item)} 
+                className={`${css.program_day_btn}`}
+                variants={selectBtn}
+                animate={activeBtn ? 'open': 'closed'}
+                transition={{duration: 0.1}}
+            >
+                {item.day}
+            </motion.div>
         </React.Fragment>
     );
 }

@@ -32,7 +32,13 @@ const Program = ({prog, org}) => {
                             <div>Ведущий</div>
                         </div>
                         <div className={css.program_event_timetable}>
-                           {chooseDay.program.map((item,index)=><ProgramEvent item={item} key={index} />)} 
+                           {
+                                chooseDay.program.map((item,index)=>{
+                                    return (
+                                        <ProgramEvent item={item} key={index} />
+                                    )
+                                })
+                           } 
                         </div>
                     </div>
                 </div>

@@ -25,7 +25,7 @@ const Footer = () => {
                             <div className={css.footer_contacts_title}>Контакты</div>
                             <div className={css.footer_contacts_item}>
                                 <FontAwesomeIcon className={css.footer_contacts_item_icon} icon={['fa', 'phone-alt']}/>
-                                <div className={css.footer_contacts_item_text}>8-932-331-12-32</div>
+                                <div className={css.footer_contacts_item_text}>8-988-936-52-26</div>
                             </div>
                             <div className={css.footer_contacts_item}>
                                 <FontAwesomeIcon className={css.footer_contacts_item_icon} icon={['fa', 'envelope']}/>
