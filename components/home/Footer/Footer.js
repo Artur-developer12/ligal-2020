@@ -4,7 +4,8 @@ import  '../../../fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-const Footer = () => {
+const Footer = ({footerData}) => {
+
     return (
         <div className={css.footer}>
             <div className="container">
@@ -25,11 +26,15 @@ const Footer = () => {
                             <div className={css.footer_contacts_title}>Контакты</div>
                             <div className={css.footer_contacts_item}>
                                 <FontAwesomeIcon className={css.footer_contacts_item_icon} icon={['fa', 'phone-alt']}/>
-                                <div className={css.footer_contacts_item_text}>8-988-936-52-26</div>
+                                <div className={css.footer_contacts_item_text}>
+                                    {footerData.number}
+                                </div>
                             </div>
                             <div className={css.footer_contacts_item}>
                                 <FontAwesomeIcon className={css.footer_contacts_item_icon} icon={['fa', 'envelope']}/>
-                                <div className={css.footer_contacts_item_text}>pravo.club@gmail.com</div>
+                                <div className={css.footer_contacts_item_text}>
+                                    {footerData.email}
+                                </div>
                             </div>
                         </div>
 
@@ -37,7 +42,9 @@ const Footer = () => {
                             <div className={css.footer_contacts_title}>Место проведения</div>
                             <div className={css.footer_contacts_item}>
                                 <FontAwesomeIcon className={css.footer_contacts_item_icon} icon={['fa', 'map-marker-alt']}/>
-                                <div className={css.footer_contacts_item_text}>КБР, Эльбрусский район, село Эльбрус, Эльбрусский учебно-научный комплекс КБГУ</div>
+                                <div className={css.footer_contacts_item_text}>
+                                    {footerData.place}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -48,15 +55,19 @@ const Footer = () => {
                                 Copyright <FontAwesomeIcon icon={['far','copyright']}/> 2020 
                             </div>
                             <div className={css.footer_Copyright_info_text}>
-                                Разработка сайтов и мобильных приложений
+                                Разработка сайтов и мобильных приложений,
                             </div>
                             <div className={css.footer_Copyright_info_text}>
                                 Дышеков Артур 8-938-694-83-62
                             </div>
                         </div>
                         <div className={css.footer_Copyright_social}>
-                            <a href="!#"><FontAwesomeIcon  icon= {['fab',  'vk']} /> </a>
-                            <a href="!#"><FontAwesomeIcon  icon= {['fab',  'instagram']} /> </a>
+                            <a href={footerData.vkontact} target="_blank">
+                                <FontAwesomeIcon  icon= {['fab',  'vk']} />
+                            </a>
+                            <a href={footerData.instagram} target="_blank">
+                                <FontAwesomeIcon  icon= {['fab',  'instagram']} /> 
+                            </a>
                         </div>
                     </div>
                 </div>

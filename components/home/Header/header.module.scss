@@ -1,7 +1,7 @@
 @import '../../../styles/variables.scss';
 
 .header{
-    background-image: url('../../../public/header-bg.jpg');
+    // background-image: url('../../../public/header-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
@@ -100,6 +100,8 @@
             animation-duration: 0.8s;
             animation-iteration-count: infinite;
             animation-direction: alternate;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
                 &_line{
                     width: 10px;
                     height: 10px;

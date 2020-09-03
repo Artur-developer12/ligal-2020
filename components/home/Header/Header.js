@@ -4,14 +4,18 @@ import Links from 'next/link'
 import {Link} from "react-scroll";
 
 const header = ({headData}) => {
+    const {API_URL} = process.env
    
+    const headerBg = {
+        backgroundImage: `url(${API_URL + headData.bg.url})`
+    }
 
     return (
-        <div className={style.header} id="main">
+        <header style={headerBg} className={style.header} id="main">
              <div className={'container ' + style.header_containerBg}> 
                  <div className={style.header_intro}>
-                    <div className={style.header_intro_date}><i className="far fa-calendar-alt"></i> 1-5 декабря</div>
-                    <div className={style.header_intro_title}>Межрегиональный юридический форум <br/> «ЛИГАЛ – 2020»</div>
+                    <div className={style.header_intro_date}><i className="far fa-calendar-alt"></i> {headData.subtitle}</div>
+                    <div className={style.header_intro_title}>{headData.title}<br/>{headData.name}</div>
                     <Links href={'/registration'}>
                         <a className="btn">Регистрация</a>
                     </Links>
@@ -26,7 +30,7 @@ const header = ({headData}) => {
                 </Link>
                 
              </div>
-        </div>
+        </header>
     );
 }
 

@@ -34,11 +34,11 @@ const Program = ({prog, org}) => {
                         <div className={css.program_event_timetable}>
                            {
                                 chooseDay.program.map((item,index)=>{
-                                    return (
+                                    return(
                                         <ProgramEvent item={item} key={index} />
                                     )
                                 })
-                           } 
+                            } 
                         </div>
                     </div>
                 </div>

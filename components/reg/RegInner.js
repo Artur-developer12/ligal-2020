@@ -4,12 +4,15 @@ import { Button, LinearProgress, MenuItem, FormControlLabel } from '@material-ui
 import { TextField, CheckboxWithLabel, Checkbox } from 'formik-material-ui';
 
 import css from './reg.module.scss';
+import { useEffect } from 'react';
 
- 
+
 
 function reg() {
     const {API_URL} = process.env
-
+    useEffect(()=>{
+      document.body.style.overflow = 'auto' 
+     })
 
     const education = [
         {
@@ -208,7 +211,7 @@ function reg() {
                 
                 >
                 {education.map(option => (
-                    <MenuItem key={option.value} value={option.value}>
+                    <MenuItem style={{whiteSpace: 'normal'}} key={option.value} value={option.value}>
                     {option.label}
                     </MenuItem>
                 ))}
@@ -226,7 +229,7 @@ function reg() {
                 
                 >
                 {region.map(option => (
-                    <MenuItem key={option.value} value={option.value}>
+                    <MenuItem style={{whiteSpace: 'normal'}} key={option.value} value={option.value}>
                     {option.label}
                     </MenuItem>
                 ))}

@@ -29,7 +29,7 @@ const Nav = () => {
 
     const links = [
         {
-            text: 'главная',
+            text: 'Главная',
             to: 'main'
         },
         {
@@ -74,8 +74,8 @@ const Nav = () => {
                                 })
                             }
                             
-                            <Links href={'/registration'}>
-                                <a className={`btn ${style.header_nav_btn}`}>Принять участие</a>
+                            <Links  href={'/registration'}>
+                                <a  className={`btn ${style.header_nav_btn}`}>Принять участие</a>
                             </Links>
                         </div>
                     </nav>
