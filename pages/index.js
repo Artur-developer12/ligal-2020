@@ -46,9 +46,7 @@ import { useEffect } from 'react'
         <Participate/>
       </div>
 
-      <div data-aos="fade-up">
         <Showing/>
-      </div>
 
       <div data-aos="fade-up">
         <Organizers org={organizers}/>

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Formik, Form, Field } from 'formik';
-import { Button, LinearProgress, MenuItem, FormControlLabel } from '@material-ui/core';
-import { TextField, CheckboxWithLabel, Checkbox } from 'formik-material-ui';
+import { Button, LinearProgress, MenuItem } from '@material-ui/core';
+import { TextField, CheckboxWithLabel } from 'formik-material-ui';
+import Link from 'next/link'
 
 import css from './reg.module.scss';
 import { useEffect } from 'react';
@@ -17,54 +18,42 @@ function reg() {
     const education = [
         {
           value: 'Неоконченное среднее профессиональное образование',
-          label: 'Неоконченное среднее профессиональное образование',
         },
         {
           value: 'Среднее профессиональное образование',
-          label: 'Среднее профессиональное образование',
         },
         {
           value: 'Неоконченное высшее образование ',
-          label: 'Неоконченное высшее образование ',
         },
         {
           value: 'Высшее образование — бакалавриат; специалитет',
-          label: 'Высшее образование — бакалавриат; специалитет',
         },
         {
           value: 'Высшее образование — магистратура;',
-          label: 'Высшее образование — магистратура;',
         },
         {
-          value: 'Высшее образование — подготовка кадров высшей квалификации (аспирантура);',
-          label: 'Высшее образование — подготовка кадров высшей квалификации (аспирантура);',
+          value: 'Высшее образование — подготовка кадров высшей квалификации (аспирантура)',
         },
       ];
 
       const region = [
           {
             value: 'Республика Дагестан',
-            label: 'Республика Дагестан',   
           },
           {
             value: 'Республика Ингушетия',
-            label: 'Республика Ингушетия',   
           },
           {
             value: 'Кабардино – Балкарская Республика',
-            label: 'Кабардино – Балкарская Республика',   
           },
           {
             value: 'Республика Северная Осетия – Алания',
-            label: 'Республика Северная Осетия – Алания',   
           },
           {
             value: 'Ставропольский край',
-            label: 'Ставропольский край',   
           },
           {
             value: 'Чеченская Республика',
-            label: 'Чеченская Республика',   
           },
       ]
 
@@ -149,11 +138,11 @@ function reg() {
       }
 
 
-      const onSubmit = (values, { setSubmitting }) => {
-        setTimeout(() => {
-          setSubmitting(false);
-        //   alert(JSON.stringify(values, null, 2));
-            onRegistr(`${API_URL}/registereds`, values)
+      const onSubmit = (values, { setSubmitting, resetForm }) => {
+        setTimeout( async () => {
+            await setSubmitting(false);
+            await onRegistr(`${API_URL}/registereds`, values)
+            await resetForm({})
         }, 500);
       }
 
@@ -210,9 +199,9 @@ function reg() {
                 className={css.input}
                 
                 >
-                {education.map(option => (
-                    <MenuItem style={{whiteSpace: 'normal'}} key={option.value} value={option.value}>
-                    {option.label}
+                {education.map((option, index) => (
+                    <MenuItem style={{whiteSpace: 'normal'}} key={index} value={option.value}>
+                    {option.value}
                     </MenuItem>
                 ))}
             </Field>
@@ -228,9 +217,9 @@ function reg() {
                 className={css.input}
                 
                 >
-                {region.map(option => (
-                    <MenuItem style={{whiteSpace: 'normal'}} key={option.value} value={option.value}>
-                    {option.label}
+                {region.map((option, index) => (
+                    <MenuItem style={{whiteSpace: 'normal'}} key={index} value={option.value}>
+                      {option.value}
                     </MenuItem>
                 ))}
             </Field>
@@ -292,9 +281,17 @@ function reg() {
               component={CheckboxWithLabel}
               name="personalData"
               type="checkbox"
-              Label={{ label: 'Согласен на обработку моих персональных данных' }}
+              Label={{ label: 'Согласен(а) на обработку моих персональных данных' }}
             />
-          </div>    
+          </div>
+          <div className={css.privacy}>
+              Нажимая кнопку регистрация, я подтверждаю, что ознакомился с положениями, указанными в стаье  
+          <Link href={'/privacy'}>
+              <a>Политика конфиденциальности.</a> 
+          </Link>
+
+          </div>
+          
 
           
           {isSubmitting && <LinearProgress />}
@@ -307,7 +304,11 @@ function reg() {
           >
             Регистрация
           </Button>
+          <Link href={'/'}>
+              <a className={css.link}>Назад на главную</a>
+          </Link>
         </Form>
+        
       )}
     </Formik>
   );

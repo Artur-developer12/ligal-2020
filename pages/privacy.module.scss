@@ -1,0 +1,14 @@
+.container{
+    ol { counter-reset: item }
+    li{ display: block }
+    li:before { content: counters(item, ".") " "; counter-increment: item }
+    h3{
+        display: inline-block;
+    }
+    h1{
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
