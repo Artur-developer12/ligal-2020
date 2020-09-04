@@ -1,15 +1,17 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import { Button, LinearProgress, MenuItem } from '@material-ui/core';
 import { TextField, CheckboxWithLabel } from 'formik-material-ui';
 import Link from 'next/link'
 
 import css from './reg.module.scss';
-import { useEffect } from 'react';
 
 
 
-function reg() {
+function reg({OpenDialog}) {
+
+
+
     const {API_URL} = process.env
     useEffect(()=>{
       document.body.style.overflow = 'auto' 
@@ -69,8 +71,10 @@ function reg() {
             });
             const json = await response.json();
             console.log('Успех:',json)
+            return true
           } catch (error) {
             console.error('Ошибка:', error);
+            return false
           }
       }
       const initialValues = {
@@ -143,6 +147,7 @@ function reg() {
             await setSubmitting(false);
             await onRegistr(`${API_URL}/registereds`, values)
             await resetForm({})
+            await OpenDialog(true)
         }, 500);
       }
 
@@ -285,7 +290,7 @@ function reg() {
             />
           </div>
           <div className={css.privacy}>
-              Нажимая кнопку регистрация, я подтверждаю, что ознакомился с положениями, указанными в стаье  
+              Нажимая кнопку "регистрация", я подтверждаю, что ознакомился с положениями, указанными в стаье  
           <Link href={'/privacy'}>
               <a>Политика конфиденциальности.</a> 
           </Link>

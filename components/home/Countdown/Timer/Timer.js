@@ -3,6 +3,14 @@ import css from './timer.module.scss'
 
 const Timer = ({dateTimer}) => {
 
+
+    var decCache = [],
+    decCases = [2, 0, 1, 1, 1, 2];
+    function decOfNum(number, titles){
+        if(!decCache[number]) decCache[number] = number % 100 > 4 && number % 100 < 20 ? 2 : decCases[Math.min(number % 10, 5)];
+        return titles[decCache[number]];
+    }
+
     const [tymeDays, setTymeDays] = useState('00')
     const [tymeHours, setTymeHours] = useState('00')
     const [tymeMinutes, setTymeMinutes] = useState('00')
@@ -47,28 +55,36 @@ const Timer = ({dateTimer}) => {
         <div className={css.countdown_timer}>
             <div className={css.countdown_timer_item}>
                 <div className={css.countdown_timer_number}>{tymeDays}</div>
-                <div className={css.countdown_timer_text}>дней</div>
+                <div className={css.countdown_timer_text}>
+                    {decOfNum(tymeDays, ['День', 'Дня', 'Дней'])}
+                </div>
             </div>
 
             <div className={css.countdown_timer_dots}>:</div>
 
             <div className={css.countdown_timer_item}>
                 <div className={css.countdown_timer_number}>{tymeHours}</div>
-                <div className={css.countdown_timer_text}>Часов</div>
+                <div className={css.countdown_timer_text}>
+                    {decOfNum(tymeHours, ['Час', 'Часа', 'Часов'])}
+                </div>
             </div>
 
             <div className={css.countdown_timer_dots}>:</div>
 
             <div className={css.countdown_timer_item}>
                 <div className={css.countdown_timer_number}>{tymeMinutes}</div>
-                <div className={css.countdown_timer_text}>Минуты</div>
+                <div className={css.countdown_timer_text}>
+                    {decOfNum(tymeMinutes, ['Минута', 'Минуты', 'Минут'])}
+                </div>
             </div>
 
             <div className={css.countdown_timer_dots}>:</div>
 
             <div className={css.countdown_timer_item}>
                 <div className={css.countdown_timer_number}>{tymeSeconds}</div>
-                <div className={css.countdown_timer_text}>секнда</div>
+                <div className={css.countdown_timer_text}>
+                    {decOfNum(tymeSeconds, ['Секунда', 'Секунды', 'Секунд'])}
+                </div>
             </div>
         </div>
     );

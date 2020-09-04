@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const Footer = ({footerData}) => {
+  const {API_URL} = process.env
+
 
     return (
         <div className={css.footer}>
@@ -19,7 +21,9 @@ const Footer = ({footerData}) => {
                                 <div className={css.footer_info_logo_text}>Лигал 2020</div>
                             </div>
                             <div className={css.footer_info_text}>Межрегиональный юридический форум </div>
-                            <a href="!#" className={css.footer_info_link}>Положение о форуме</a>
+                            <a href={`${API_URL + footerData.rule.url}`} download className={css.footer_info_link}>
+                                Положение о форуме
+                            </a>
                         </div>
 
                         <div className={css.footer_contacts}>
