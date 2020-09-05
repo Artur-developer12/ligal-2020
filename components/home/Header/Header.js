@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import style from './header.module.scss'
 import Links from 'next/link'
 import {Link} from "react-scroll";
@@ -6,9 +6,22 @@ import {Link} from "react-scroll";
 const header = ({headData}) => {
     const {API_URL} = process.env
    
-    const headerBg = {
-        backgroundImage: `url(${API_URL + headData.bg.url})`
-    }
+    const headerBg = { backgroundImage: `url(${API_URL + headData.bg.url})` }
+
+    useEffect(()=>{
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        const styles = getComputedStyle(document.documentElement)
+        console.log('css var', styles.getPropertyValue('--vh') )
+        
+        window.addEventListener('resize', () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            console.log('resize css var', styles.getPropertyValue('--vh') )
+
+            
+        });
+    })
 
     return (
         <header style={headerBg} className={style.header} id="main">

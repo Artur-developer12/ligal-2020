@@ -1,12 +1,12 @@
 @import '../../../styles/variables.scss';
-
+ 
 .header{
     // background-image: url('../../../public/header-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
     background-attachment:fixed;
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     margin-bottom: $mBottom;
     position: relative;
