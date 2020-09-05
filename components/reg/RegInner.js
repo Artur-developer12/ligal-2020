@@ -144,10 +144,10 @@ function reg({OpenDialog}) {
 
       const onSubmit = (values, { setSubmitting, resetForm }) => {
         setTimeout( async () => {
-            await setSubmitting(false);
-            await onRegistr(`${API_URL}/registereds`, values)
-            await resetForm({})
-            await OpenDialog(true)
+          await onRegistr(`${API_URL}/registereds`, values)
+          await resetForm({})
+          await setSubmitting(false);
+          await OpenDialog(true)
         }, 500);
       }
 
