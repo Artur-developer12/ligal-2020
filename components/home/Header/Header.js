@@ -9,11 +9,12 @@ const header = ({headData}) => {
     const headerBg = { backgroundImage: `url(${API_URL + headData.bg.url})` }
 
     useEffect(()=>{
+        
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
         const styles = getComputedStyle(document.documentElement)
         console.log('css var', styles.getPropertyValue('--vh') )
-        
+
         window.addEventListener('resize', () => {
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -24,7 +25,7 @@ const header = ({headData}) => {
     })
 
     return (
-        <header style={headerBg} className={style.header} id="main">
+        <header className={style.header} id="main">
              <div className={'container ' + style.header_containerBg}> 
                  <div className={style.header_intro}>
                     <div className={style.header_intro_date}><i className="far fa-calendar-alt"></i> {headData.subtitle}</div>
@@ -33,15 +34,6 @@ const header = ({headData}) => {
                         <a className="btn">Регистрация</a>
                     </Links>
                 </div>
-                <Link
-                    className={style.header_arrow}
-                    to="about"
-                    smooth={true} 
-                    duration={1000}
-                >
-                    <div className={style.header_arrow_line}></div>
-                </Link>
-                
              </div>
         </header>
     );
