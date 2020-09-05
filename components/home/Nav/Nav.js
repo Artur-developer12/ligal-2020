@@ -67,6 +67,7 @@ const Nav = () => {
                                             smooth={true} 
                                             duration={1000}
                                             key={index}
+                                            offset={-180}
                                         >
                                             {item.text}
                                         </Link>
