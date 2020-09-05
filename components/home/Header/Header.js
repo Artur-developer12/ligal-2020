@@ -26,7 +26,7 @@ const header = ({headData}) => {
 
     return (
         <header className={style.header} id="main">
-             <div className={'container'}> 
+             <div className={'container ' + style.header_containerBg}> 
                  <div className={style.header_intro}>
                     <div className={style.header_intro_date}><i className="far fa-calendar-alt"></i> {headData.subtitle}</div>
                     <div className={style.header_intro_title}>{headData.title}<br/>{headData.name}</div>
