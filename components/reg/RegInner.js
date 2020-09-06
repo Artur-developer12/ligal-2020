@@ -8,7 +8,7 @@ import css from './reg.module.scss';
 
 
 
-function reg() {
+function reg({openModal}) {
 
 
 
@@ -70,11 +70,9 @@ function reg() {
               }
             });
             const json = await response.json();
-            console.log('Успех:',json)
-            return true
+            return json
           } catch (error) {
-            console.error('Ошибка:', error);
-            return false
+            return error
           }
       }
       const initialValues = {
@@ -144,9 +142,15 @@ function reg() {
 
       const onSubmit = (values, { setSubmitting, resetForm }) => {
         setTimeout( async () => {
-          await onRegistr(`${API_URL}/registereds`, values)
+          const status =  await onRegistr(`${API_URL}/registereds`, values)
           await resetForm({})
           await setSubmitting(false);
+          if(status.statusCode === 404){
+            openModal('что-то пошло не так, пожалуйста свяжитесь с нами для решения данной проблемы')
+          }else{
+            openModal('регистрация прошла успешно') 
+          }
+          
         }, 500);
       }
 

@@ -10,24 +10,24 @@ const About = () => {
         {
             title: 'Оценка грамотности',
             text: 'Оценить текущий уровень правовой грамотности молодежи',
-            img: 'about/about-icon-1.svg'
+            img: 'aboutNew/about-icon-1.svg'
         },
         {
             title: 'Развитие грамотности',
             text: 'Повысить уровень правовой культуры молодежи',
-            img: 'about/about-icon-2.svg'
+            img: 'aboutNew/about-icon-2.svg'
 
         },
         {
             title: 'Создание проектов',
             text: 'Развитие творческого потенциала через исследовательскую  и командную деятельность ',
-            img: 'about/about-icon-3.svg'
+            img: 'aboutNew/about-icon-3.svg'
 
         },
         {
             title: 'Нахождение партнеров',
             text: 'Наладить партнерские отношения с высшими учебными заведениями СКФО',
-            img: 'about/about-icon-4.svg'
+            img: 'aboutNew/about-icon-4.svg'
 
         },
        
