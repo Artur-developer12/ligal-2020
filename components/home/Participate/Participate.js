@@ -7,7 +7,7 @@ const Participate = () => {
         <div className={css.Participate}>
             <div className="container">
                 <div className={css.Participate_inner}>
-                    <h2 className={"title " + css.Participate_title }>Кто может участвовать </h2>
+                    <h2 className={"title " + css.Participate_title }>Кто может участвовать?</h2>
                     <div className={css.Participate_block}>
                         <div className={css.Participate_item}>
                             <div className={css.Participate_item_title}>Участник форума - это</div>
@@ -17,7 +17,7 @@ const Participate = () => {
                             </ul>
                         </div>
                         <div className={css.Participate_item}>
-                            <div className={css.Participate_item_title}>Как принять участие в форуме</div>
+                            <div className={css.Participate_item_title}>Как принять участие в форуме?</div>
                             <ul>
                                 <li>Пройти регистрацию на нашем сайте</li>
                                 <li>Дождаться оценки экспертов</li>
