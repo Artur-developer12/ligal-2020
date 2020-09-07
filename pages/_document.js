@@ -5,11 +5,16 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="ru">
         <Head>
-            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
 
-                      {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          <meta name="Keywords" content="Форум, Лигал, База КБГУ, КБГУ"/>
+          <meta charset="utf-8"/>
+          <meta name="description" content="Межрегиональный юридический форум «Лигал–2020»" />
+
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
