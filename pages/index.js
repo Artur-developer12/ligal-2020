@@ -72,7 +72,7 @@ import { useEffect } from 'react'
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const {API_URL} = process.env
 
   const org = await fetch(`${API_URL}/organizers`)
