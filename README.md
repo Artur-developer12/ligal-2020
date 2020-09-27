@@ -15,7 +15,7 @@ React.js
 ```sh
 Next.js
 ```
-![alt tag](https://i.imgur.com/gBOJajN.gif)
+![alt tag](https://i.imgur.com/N20Zu2s.gif)​
  
 
 
