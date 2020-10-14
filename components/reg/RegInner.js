@@ -312,7 +312,7 @@ function reg({openModal}) {
           <Button
             variant="contained"
             color="primary"
-            disabled={isSubmitting}
+            disabled={true}
             onClick={submitForm}
             className={css.btn}
           >

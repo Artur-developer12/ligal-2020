@@ -30,8 +30,8 @@ const header = ({headData}) => {
                  <div className={style.header_intro}>
                     <div className={style.header_intro_date}><i className="far fa-calendar-alt"></i> {headData.subtitle}</div>
                     <div className={style.header_intro_title}>{headData.title}<br/>{headData.name}</div>
-                    <Links href={'/registration'}>
-                        <a className="btn">Регистрация</a>
+                    <Links href={'/'}>
+                        <a className="btn">Регистрация закрыта</a>
                     </Links>
                 </div>
              </div>

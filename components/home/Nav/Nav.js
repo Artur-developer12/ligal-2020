@@ -75,8 +75,8 @@ const Nav = () => {
                                 })
                             }
                             
-                            <Links  href={'/registration'}>
-                                <a  className={`btn ${style.header_nav_btn}`}>Принять участие</a>
+                            <Links  href={'/'}>
+                                <a  className={`btn ${style.header_nav_btn}`}>Регистрация закрыта</a>
                             </Links>
                         </div>
                     </nav>

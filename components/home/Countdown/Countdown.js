@@ -14,8 +14,8 @@ const Countdown = ({countdown}) => {
                             <Timer dateTimer={countdown.date}/>
                         </div>
                         <div className={css.countdown_block_link}>
-                            <Link href={'/registration'}>
-                                <a className="btn">Зарегистрироваться</a>
+                            <Link href={'/'}>
+                                <a className="btn">Регистрация закрыта</a>
                             </Link>
                         </div>
                     </div>    

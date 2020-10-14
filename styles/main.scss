@@ -60,14 +60,14 @@ button, button:visited, button:focus, button:active, button:hover{
 .btn{
   text-decoration: none;
   padding: 5px 20px;
-  background: #7E57D2;
+  background: #a91654;;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   color: #fff;
   transition: background 0.2s;
   cursor: pointer;
       &:hover{
-          background: darken(#7E57D2, 5%);
+          background: darken(#a91654, 5%);
           color: #fff;
           text-decoration: none !important;
 
